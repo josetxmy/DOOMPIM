@@ -17,9 +17,10 @@ import java.util.Date;
 import model.vendaLivro;
 
 /**
- *
+ * 
  * @author jairb
  */
+sout    seja bem vindo a livraria
 public class TLivraria {
 
     public static int menu() {
@@ -35,33 +36,33 @@ public class TLivraria {
         System.out.println("7 - Venda Livro");
         System.out.println("8 - Listar Vendas");
         System.out.println("9 - Sair");
-        System.out.println("Escolha um opÁ„o acima");
+        System.out.println("Escolha um op√ß√£o acima");
         return Integer.parseInt(ler.nextLine());
     }
 
     /**
-     * Projeto Livraria com OrientaÁ„o a Objetos
+     * Projeto Livraria com Orienta√ß√£o a Objetos
      *
-     * @param args the command line arguments 2. Sobre cada cliente, È
-     * importante manter seu endereÁo, telefone, CPF e lista dos livros que este
-     * cliente j· comprou. 2.1 Para cada compra, È importante guardar a data em
+     * @param args the command line arguments 2. Sobre cada cliente, √©
+     * importante manter seu endere√ßo, telefone, CPF e lista dos livros que este
+     * cliente j√° comprou. 2.1 Para cada compra, √© importante guardar a data em
      * que esta foi realizada. 3. Um cliente pode comprar muitos livros. Um
-     * livro pode ser vendido para mais de um cliente pois geralmente h· v·rios
-     * livros em estoque. 4. Um cliente pode ser pessoa fÌsica ou jurÌdica. Se
-     * for pessoa jurÌdica, o seu identificador deve ser o CNPJ. 5. A livraria
+     * livro pode ser vendido para mais de um cliente pois geralmente h√° v√°rios
+     * livros em estoque. 4. Um cliente pode ser pessoa f√≠sica ou jur√≠dica. Se
+     * for pessoa jur√≠dica, o seu identificador deve ser o CNPJ. 5. A livraria
      * compra livros de editoras. 6. Sobre as editoras, a livraria precisa de
-     * seu cÛdigo, endereÁo, telefone de contato, e o nome de seu gerente. 7.
-     * Cada cliente tem um cÛdigo ˙nico. 8. Deve-se manter um cadastro sobre
-     * cada livro na livraria. Para cada livro, È importante armazenar o nome do
+     * seu c√≥digo, endere√ßo, telefone de contato, e o nome de seu gerente. 7.
+     * Cada cliente tem um c√≥digo √∫nico. 8. Deve-se manter um cadastro sobre
+     * cada livro na livraria. Para cada livro, √© importante armazenar o nome do
      * autor, assunto, editora, ISBN e a quantidade dos livros em estoque. 9.
-     * Editoras diferentes n„o fornecem o mesmo tipo de livro. Padr„o MVC -
-     * Model, View, Controler | Classe Cliente, Telas, Classe RepÛsitÛrio
+     * Editoras diferentes n√£o fornecem o mesmo tipo de livro. Padr√£o MVC -
+     * Model, View, Controler | Classe Cliente, Telas, Classe Rep√≥sit√≥rio
      */
     public static void main(String[] args) {
         // TODO code application logic here
         Scanner ler = new Scanner(System.in);
-        CClientes cadClientes = new CClientes();// RepositÛrio de Clientes
-        CEditoras cadEditoras = new CEditoras();// RepositÛrio de Clientes
+        CClientes cadClientes = new CClientes();// Reposit√≥rio de Clientes
+        CEditoras cadEditoras = new CEditoras();// Reposit√≥rio de Clientes
         CLivros cadLivros = new CLivros();
         CVendaLivros cadVendaLivros = new CVendaLivros();
 
@@ -72,7 +73,7 @@ public class TLivraria {
             try {
                 opM = menu();
             } catch (Exception e) {
-                System.out.println("erro: " + e + "\nOpÁ„o Inv·lida!");
+                System.out.println("erro: " + e + "\nOp√ß√£o Inv√°lida!");
             }
             switch (opM) {
                 case 1:
@@ -87,7 +88,7 @@ public class TLivraria {
                         System.out.println("Informe o Nome: ");
                         ler.nextLine();
                         cli.setNomeCliente(ler.nextLine());
-                        System.out.println("… pessoa fÌsica? \n1 - Sim\n2 - N„o");
+                        System.out.println("√â pessoa f√≠sica? \n1 - Sim\n2 - N√£o");
                         int tPessoa = ler.nextInt();
                         System.out.println("Infome o documento");
                         String cpfCNPJ = ler.next();
@@ -112,13 +113,13 @@ public class TLivraria {
                         ler.nextLine();
                         System.out.println("Informe o telefone: ");
                         cli.setTelefone(ler.nextLine());
-                        System.out.println("Informe o endereÁo: ");
+                        System.out.println("Informe o endere√ßo: ");
                         cli.setEndereco(ler.nextLine());
                         cadClientes.addCliente(cli);
                         System.out.println("Cliente " + cli.getNomeCliente() + " foi cadastro com sucesso!");
                          
 
-                        System.out.println("Deseja continuar cadastrando?\n1 - Sim\n2 - N„o");
+                        System.out.println("Deseja continuar cadastrando?\n1 - Sim\n2 - N√£o");
                         int opCC;
                         opCC = ler.nextInt();
                         opC = opCC == 1;
@@ -168,15 +169,15 @@ public class TLivraria {
                         edt.setNmEditora(ler.nextLine());
                         System.out.println("Informe o telefone");
                         edt.setTelefone(ler.nextLine());
-                        System.out.println("Informe o endereÁo");
+                        System.out.println("Informe o endere√ßo");
                         edt.setEndereco(ler.nextLine());
-                        System.out.println("Quem È o Gerente?");
+                        System.out.println("Quem √© o Gerente?");
                         edt.setGerente(ler.nextLine());
-                        cadEditoras.addEditora(edt);//Cadastro no repositÛrio
+                        cadEditoras.addEditora(edt);//Cadastro no reposit√≥rio
                         System.out.println("Editora " + edt.getNmEditora()
                                 + " cadastrada com sucesso!");
 
-                        System.out.println("Deseja continuar cadastrando?\n1 - Sim\n2 - N„o");
+                        System.out.println("Deseja continuar cadastrando?\n1 - Sim\n2 - N√£o");
                         int opCC;
                         opCC = ler.nextInt();
                         opC = opCC == 1;
@@ -198,7 +199,7 @@ public class TLivraria {
                         liv.setIdLivro(cadLivro.addLivro());
                         System.out.println("Informe o id do Livro:");
                         liv.setIdLivro(ler.nextInt());
-                        System.out.println("Informe o tÌtulo do Livro:");
+                        System.out.println("Informe o t√≠tulo do Livro:");
                         ler.nextLine();
                         liv.setTitulo(ler.nextLine());
                         System.out.println("Informe o assunto:");
@@ -209,7 +210,7 @@ public class TLivraria {
                         liv.setIsbn(ler.next());
                         System.out.println("Informe o estoque:");
                         liv.setEstoque(ler.nextInt());
-                        System.out.println("Informe o preÁo:");
+                        System.out.println("Informe o pre√ßo:");
                         liv.setPreco(ler.nextFloat());
                         boolean edtLivroOK = true;
                         do {
@@ -219,14 +220,14 @@ public class TLivraria {
                                 edtLivroOK = false;
                                 liv.setIdEditora(edtLivro);
                             } else {
-                                System.out.println("Editora inv·lida, tente novamente!");
+                                System.out.println("Editora inv√°lida, tente novamente!");
                             }
                         } while (edtLivroOK);
                         cadLivros.addLivro(liv);
                         System.out.println("Livro " + liv.getTitulo()
                                 + " cadastrado com sucesso!");
 
-                        System.out.println("Deseja continuar cadastrando?\n1 - Sim\n2 - N„o");
+                        System.out.println("Deseja continuar cadastrando?\n1 - Sim\n2 - N√£o");
                         int opCC;
                         opCC = ler.nextInt();
                         opC = opCC == 1;
@@ -253,7 +254,7 @@ public class TLivraria {
                             if(cadClientes.verificaCliente(idCliente)){
                                 verIdCli = false;
                             }else{
-                                System.out.println("Cliente inv·lido, tente novamente!");
+                                System.out.println("Cliente inv√°lido, tente novamente!");
                             }
                         } while (verIdCli);
                         
@@ -283,9 +284,9 @@ public class TLivraria {
                         
                         vendaLivro vendaLivro = new vendaLivro(idCliente, idLivro, qtd, dataVenda);
                         cadVendaLivros.addVendaLivro(vendaLivro);
-                        System.out.println("Venda concluÌda com sucesso!");
+                        System.out.println("Venda conclu√≠da com sucesso!");
 
-                        System.out.println("Deseja continuar cadastrando?\n1 - Sim\n2 - N„o");
+                        System.out.println("Deseja continuar cadastrando?\n1 - Sim\n2 - N√£o");
                         int opCC;
                         opCC = ler.nextInt();
                         opC = opCC == 1;
@@ -300,11 +301,11 @@ public class TLivraria {
 
                     break;
                 case 9:
-                    System.out.println("AplicaÁ„o encerrada pelo usu·rio!");
+                    System.out.println("Aplica√ß√£o encerrada pelo usu√°rio!");
                     sys = false;
                     break;
                 default:
-                    System.out.println("OpÁ„o inv·lida, tente novamente!");
+                    System.out.println("Op√ß√£o inv√°lida, tente novamente!");
                     break;
             }//fim switch
         }//fim while
